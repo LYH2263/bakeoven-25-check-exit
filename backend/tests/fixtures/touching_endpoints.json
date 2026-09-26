@@ -1,0 +1,26 @@
+{
+  "batches": [
+    {
+      "batch_id": 1,
+      "code": "BO-4000",
+      "oven_id": 1,
+      "start_min": 540,
+      "ferment_end": 580,
+      "bake_end": 610
+    },
+    {
+      "batch_id": 2,
+      "code": "BO-4001",
+      "oven_id": 1,
+      "start_min": 610,
+      "ferment_end": 635,
+      "bake_end": 655
+    }
+  ],
+  "blocks": [
+    {"batch_id": 1, "code": "BO-4000", "oven_id": 1, "phase": "ferment", "start_min": 540, "end_min": 580},
+    {"batch_id": 1, "code": "BO-4000", "oven_id": 1, "phase": "bake", "start_min": 580, "end_min": 610},
+    {"batch_id": 2, "code": "BO-4001", "oven_id": 1, "phase": "ferment", "start_min": 610, "end_min": 635},
+    {"batch_id": 2, "code": "BO-4001", "oven_id": 1, "phase": "bake", "start_min": 635, "end_min": 655}
+  ]
+}

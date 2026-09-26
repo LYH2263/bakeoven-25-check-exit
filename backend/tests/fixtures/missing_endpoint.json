@@ -1,0 +1,15 @@
+{
+  "batches": [
+    {
+      "batch_id": 1,
+      "code": "BO-5000",
+      "oven_id": 1,
+      "start_min": 540,
+      "ferment_end": 580
+    }
+  ],
+  "blocks": [
+    {"batch_id": 1, "code": "BO-5000", "oven_id": 1, "phase": "ferment", "start_min": 540, "end_min": 580},
+    {"batch_id": 1, "code": "BO-5000", "oven_id": 1, "phase": "bake", "start_min": 580, "end_min": 610}
+  ]
+}

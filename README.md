@@ -32,6 +32,17 @@ docker compose up --build
 2. 创建生产批次，系统按半开区间占炉并检测冲突。
 3. 甘特查看占用；冲突与可开工窗口辅助排产。
 
+## 排炉核对
+
+可重复执行的核对，分采集（批次端点、甘特色块、重叠判断三处取数）、判定（端点与色块一致、端点相接不误报、半开真重叠必找到）、入口三步：
+
+```bash
+docker compose exec api python -m app.checks              # 核对当前库
+docker compose exec api python -m app.checks --fixture tests/fixtures/overlap_two_batches.json
+```
+
+退出码：`0` 通过；`1` 发现半开真重叠（输出点名两个批次号）；`2` 采集缺端点或色块（输出写明缺哪项）；`3` 端点与色块不一致 / 相接被误报 / 真重叠没找到。
+
 ## 开发与测试
 
 ```bash
