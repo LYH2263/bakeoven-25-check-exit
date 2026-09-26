@@ -37,3 +37,14 @@ docker compose up --build
 ```bash
 docker compose exec api pytest -q
 ```
+
+## 排炉核对
+
+可重复执行的核对脚本，分采集（批次端点、甘特色块、重叠判断三处取数）、判定（端点与色块一致、端点相接不报重叠、半开真重叠必被找到）、入口三步：
+
+```bash
+docker compose exec api python -m app.services.schedule_check                    # 当前库
+docker compose exec api python -m app.services.schedule_check --source fixture --fixture /path/fixture.json
+```
+
+退出码：0 通过；1 发现重叠（打印批次号对）；2 采集缺项（写明缺哪项）；3 判定不一致。
